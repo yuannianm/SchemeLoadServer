@@ -10,7 +10,8 @@ public interface ScoringstandardMapper {
     boolean addCase(Scoringstandard c);
     boolean deleteCaseById(String id);
     boolean updateCaseById(Scoringstandard c);
-    Scoringstandard getCaseById();
-    @Select("SELECT * FROM scoringstandard")
+    @Select("SELECT * FROM scoringstandard WHERE parent_id=#{id}")
+    List<Scoringstandard> getCaseBypreId(String id);
+    @Select("SELECT * FROM scoringstandard ")
     List<Scoringstandard> getAllCases();
 }

@@ -10,7 +10,8 @@ public interface QuotaMapper {
     boolean addCase(Quota c);
     boolean deleteCaseById(String id);
     boolean updateCaseById(Quota c);
-    Quota getCaseById();
+    @Select("SELECT * FROM quota WHERE parent_id=#{id}")
+    List<Quota> getCaseBypreId(String id);
     @Select("SELECT * FROM quota")
     List<Quota> getAllCases();
 }
