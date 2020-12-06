@@ -7,12 +7,11 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-
-public interface CaseMapper {
-    @Insert("INSERT INTO")
-    boolean addCase(Case c);
+public interface SchemeMapper {
+    boolean addCase(Scheme c);
     boolean deleteCaseById(String id);
-    boolean updateCaseById(Case c);
-    Case getCaseById();
-    List<Case> getAllCases();
+    boolean updateCaseById(Scheme c);
+    Scheme getCaseById();
+    @Select("SELECT * FROM scheme")
+    List<Scheme> getAllCases();
 }

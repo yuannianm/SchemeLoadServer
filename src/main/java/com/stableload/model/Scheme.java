@@ -3,9 +3,7 @@ package com.stableload.model;
 import lombok.Data;
 
 @Data
-public class Stable  {
+public class Scheme {
     String id;
-    String parent_id;
     String name;
 }
-
