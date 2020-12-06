@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public interface CaseMapper {
-    @Insert("INSERT INTO ")
+    @Insert("INSERT INTO")
     boolean addCase(Case c);
     boolean deleteCaseById(String id);
     boolean updateCaseById(Case c);
