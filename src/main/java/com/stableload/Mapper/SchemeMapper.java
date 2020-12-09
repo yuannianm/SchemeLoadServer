@@ -1,17 +1,26 @@
 package com.stableload.Mapper;
 
 import com.stableload.model.*;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 public interface SchemeMapper {
-    boolean addCase(Scheme c);
-    boolean deleteCaseById(String id);
-    boolean updateCaseById(Scheme c);
-    Scheme getCaseById();
+    @Insert("INSERT INTO SCHEME(id,name) values(#{id},#{name})")
+    boolean addScheme(Scheme c);
+
+    @Delete("DELETE FROM SCHEME WHERE id = #{id}")
+    boolean deleteSchemeById(String id);
+
+    @Update("UPDATE SCHEME set name=#{name} where id=#{id}")
+    boolean updateSchemeById(Scheme c);
+
+    @Select("SELECT * FROM SCHEME WHERE id = #{id}")
+    Scheme getSchemeById(String id);
+
+    @Select("SELECT * FROM SCHEME WHERE name = #{name}")
+    Scheme getSchemeByName(String name);
+
     @Select("SELECT * FROM scheme")
     List<Scheme> getAllCases();
 }

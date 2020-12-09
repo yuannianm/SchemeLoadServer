@@ -6,6 +6,6 @@ import lombok.Data;
 public class Quota {
     String id;
     String parent_id;
-    String body;
-    Integer level;
+    String name;
+    Integer grade;
 }

@@ -3,9 +3,9 @@ package com.stableload.model;
 import lombok.Data;
 
 @Data
-public class Scoringstandard {
+public class ScoringStandard {
     String id;
     String parent_id;
-    String body;
+    String name;
 }
 

@@ -6,7 +6,6 @@ import com.stableload.service.SchemeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 
 /**
  * 方案API接口
@@ -28,7 +27,7 @@ public class SchemeAPIController {
     @PostMapping("/api/sendscheme")
     //接收前端来的方案,返回1表示接收成功
     @CrossOrigin
-    public boolean sendscheme(@RequestBody JSONObject scheme){
+    public boolean sendscheme(@RequestBody JSONObject scheme) throws Exception{
 
         return schemeService.storeScheme(scheme);
     }
